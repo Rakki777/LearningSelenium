@@ -21,15 +21,27 @@ public class SeleniumC3_02 {
     @Owner("Rakshith")
     @Test
     public void TestBrowser() {
-    driver.get("https://app.vwo.com");
+        driver.get("https://katalon-demo-cura.herokuapp.com/");
+
+//        WebElement Make_Apt_Btn = driver.findElement(By.xpath("//a[@id=\"btn-make-appointment\"]"));
+
+        //Absolute Xath(Not recomended)
+//        WebElement Make_Apt_Btn = driver.findElement(By.xpath("/html/body/header/div/a"));
+        //Use Contains in Xpath
+//        WebElement Make_Apt_Btn = driver.findElement(By.xpath("//a[contains(@id,\"appointment\")]"));
+        // Use  text() in xpath
+        WebElement Make_Apt_Btn = driver.findElement(By.xpath(" //a[text()=\"Make Appointment\"]"));
+
+
+        Make_Apt_Btn.click();
 
 
 
-
-
-
-    @AfterTest
-    public void closeBrowser(){
-        driver.quit();
     }
+
+
+//    @AfterTest
+//    public void closeBrowser(){
+//        driver.quit();
+//    }
 }
